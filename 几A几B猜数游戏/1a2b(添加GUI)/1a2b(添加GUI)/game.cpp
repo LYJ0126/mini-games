@@ -40,11 +40,11 @@ void guipart::menuinit()
 	settextcolor(RGB(10, 10, 10));
 	settextstyle(40, 0, ("楷体"));
 	outtextxy(140, 30, "1");
-	settextcolor(RGB(180,60,100));
+	settextcolor(RGB(180, 60, 100));
 	outtextxy(185, 30, "A");
 	settextcolor(RGB(30, 30, 30));
 	outtextxy(230, 30, "2");
-	settextcolor(RGB(60,180,100));
+	settextcolor(RGB(60, 180, 100));
 	outtextxy(275, 30, "B");
 	currentindex = 0;
 	for (Button* button : buttons[currentindex]) button->draw();//绘制主菜单按钮
@@ -64,7 +64,7 @@ void guipart::menuinit()
 			}
 			}
 		}
-		if (Exit && exittimes<1) {//退出游戏,且之前没有退出过
+		if (Exit && exittimes < 1) {//退出游戏,且之前没有退出过
 			exittimes++;//退出次数加一,避免重复退出
 			initgraph(450, 300);//退出游戏界面
 			setbkcolor(bkcolor);
@@ -107,7 +107,7 @@ void guipart::mouseclick(int mousex, int mousey)
 					}
 				}
 				else if (oldindex == 1) {
-					if(i==0) gameinit();//重新开始
+					if (i == 0) gameinit();//重新开始
 					else if (i == 1) {
 						closegraph();
 						menuinit();//返回主菜单
@@ -158,11 +158,11 @@ void guipart::gameinit()
 	settextstyle(40, 0, ("楷体"));
 	//outtextxy(5, 5, title.c_str());
 	outtextxy(395, 5, title[0]);
-	settextcolor(RGB(180,60,100));
+	settextcolor(RGB(180, 60, 100));
 	outtextxy(425, 5, title[1]);
 	settextcolor(RGB(30, 30, 30));
 	outtextxy(455, 5, title[2]);
-	settextcolor(RGB(60,180,110));
+	settextcolor(RGB(60, 180, 110));
 	outtextxy(485, 5, title[3]);
 	settextcolor(RGB(30, 30, 30));
 	settextstyle(20, 0, ("宋体"));
@@ -396,7 +396,7 @@ void gamepart::gamerun()
 				outtextxy(resx + 30 + (GRID_WIDTH + INTERVAL) * 3, 240 + line * (GRID_WIDTH + INTERVAL), "B");
 				settextcolor(numcolor);
 				outtextxy(resx + 30, 240 + line * (GRID_WIDTH + INTERVAL), to_string(history[step][4]).c_str());
-				outtextxy(resx+30+2*(GRID_WIDTH+INTERVAL), 240 + line * (GRID_WIDTH + INTERVAL), to_string(history[step][5]).c_str());
+				outtextxy(resx + 30 + 2 * (GRID_WIDTH + INTERVAL), 240 + line * (GRID_WIDTH + INTERVAL), to_string(history[step][5]).c_str());
 				//添加下一行四个待填方格
 				setfillcolor(blockcolor);
 				int inix = 2 * GRID_WIDTH + 3 * INTERVAL;
@@ -515,7 +515,7 @@ void gamepart::gamerun()
 				setfillcolor(bkcolor);
 				int resx = inix + 4 * (GRID_WIDTH + INTERVAL);
 				solidrectangle(resx, iniy, resx + 4 * (GRID_WIDTH + INTERVAL), iniy + 5 * (GRID_WIDTH + INTERVAL));
-				if(topline+4==step) {//如果显示的最下面一行是目前最后一行，则只用更新前四行的结果
+				if (topline + 4 == step) {//如果显示的最下面一行是目前最后一行，则只用更新前四行的结果
 					//A
 					settextcolor(colora);
 					//settextstyle(50, 0, ("微软雅黑"));

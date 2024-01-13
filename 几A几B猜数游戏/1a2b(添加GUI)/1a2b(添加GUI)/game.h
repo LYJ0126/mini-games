@@ -2,6 +2,7 @@
 #include <iostream>
 #include <functional>
 #include <conio.h>
+#include <graphics.h>
 #include <easyx.h>
 #include <string>
 #include <vector>
